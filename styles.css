@@ -1,0 +1,616 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+  height: 100px;
+  width: 100%;
+  padding: 20px;
+  z-index: 5;
+  background-color: whitesmoke;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+
+.left-nav img {
+  height: 40px;
+}
+
+.left-nav p {
+  margin-left: 20px;
+  color: black;
+  cursor: pointer;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  padding: 7px 20px;
+  border-radius: 15px;
+  background-color: rgb(104, 157, 25);
+  border: none;
+  margin: 0 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.get-started {
+  color: rgb(95, 147, 18);
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .left-nav p {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .login,
+  .get-started {
+    font-size: 14px;
+    padding: 5px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left-nav {
+    display: none; /* Hide the left nav for smaller screens */
+  }
+
+  .right-nav {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .header {
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .login,
+  .get-started {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .left-nav {
+    display: flex;
+    font-size: 12px;
+  }
+
+  .login,
+  .get-started {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+.content-1 {
+  height: 80vh;
+  width: 100%;
+  background-image: url("/images/background1.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+  padding: 20px;
+}
+
+/* Text Styling */
+.content-1 h1 {
+  /* font-size: 3vw; */
+  margin-bottom: 10px;
+}
+
+.content-1 p {
+  /* font-size: 2vw; */
+  max-width: 80%;
+  /* margin: 0 auto; */
+}
+
+/* Button styling */
+.content-1 .get-started,
+.content-1 .demo {
+  padding: 12px 30px;
+  border-radius: 25px;
+  margin: 20px 10px;
+  font-size: 1.2vw;
+  cursor: pointer;
+}
+
+.content-1 .get-started {
+  background-color: rgb(104, 157, 25);
+  color: white;
+  border: none;
+}
+
+.content-1 .demo {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+/* Responsive Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .content-1 h1 {
+    font-size: 7vw;
+  }
+
+  .content-1 p {
+    font-size: 4vw;
+  }
+
+  .content-1 .get-started,
+  .content-1 .demo {
+    font-size: 3vw;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-1 h1 {
+    font-size: 8vw;
+  }
+
+  .content-1 p {
+    font-size: 5vw;
+  }
+
+  .content-1 .get-started,
+  .content-1 .demo {
+    font-size: 4vw;
+    padding: 8px 15px;
+  }
+}
+.content-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Left Section Styling */
+.content-2 .left {
+  flex: 1 1 45%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-2 .left img {
+  height: 80px;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.content-2 .left p {
+  /* font-size: 1.1rem; */
+  color: black;
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.content-2 .left button {
+  padding: 12px 30px;
+  color: white;
+  background-color: rgb(104, 157, 25);
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* Right Section Styling */
+.content-2 .right {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.content-2 .right img {
+  max-width: 70%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.content-2 .right p {
+  /* font-size: 1rem; */
+  color: black;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.content-2 .right a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .content-2 .left,
+  .content-2 .right {
+    width: 100%;
+  }
+
+  .content-2 .left img,
+  .content-2 .right img {
+    margin: 0 auto;
+  }
+
+  .content-2 .left p,
+  .content-2 .right p {
+    text-align: center;
+  }
+
+  .content-2 .left button {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-2 .left p,
+  .content-2 .right p {
+    font-size: 0.9rem;
+  }
+
+  .content-2 .left button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .content-2 .right img {
+    width: 90%;
+    height: auto;
+  }
+}
+.content-3 {
+  background-color: rgb(10, 40, 59);
+  text-align: center;
+  padding: 50px;
+  color: white;
+}
+
+.content-3 .top h1,
+.content-3 .top p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+/* Bottom Section Flexbox Layout */
+.content-3 .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.content-3 .bottom .left {
+  flex: 1 1 45%;
+  text-align: start;
+}
+
+.content-3 .bottom .right {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.content-3 .bottom .right img {
+  max-width: 60%;
+  height: auto;
+  margin-top: 25px;
+}
+
+/* Adjust text inside the left section */
+.content-3 .bottom .left div {
+  margin-bottom: 15px;
+}
+
+.content-3 .bottom .left p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.content-3 .bottom .left hr {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .content-3 .bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-3 .bottom .left,
+  .content-3 .bottom .right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .content-3 .bottom .right img {
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-3 {
+    padding: 30px;
+  }
+
+  .content-3 .top h1 {
+    font-size: 1.8rem;
+  }
+
+  .content-3 .top p {
+    font-size: 1rem;
+  }
+
+  .content-3 .bottom .left p {
+    font-size: 0.9rem;
+  }
+
+  /* .content-3 .bottom .right img {
+    width: 50%;
+  } */
+}
+.content-4 {
+  margin: 100px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.content-4 .top {
+  margin-top: 60px;
+}
+
+.content-4 .center {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.content-4 .grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 80%;
+  max-width: 1200px;
+  height: 800px;
+}
+
+.content-4 .grid-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* text-align: start; */
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* height: 300px; */
+}
+
+/* .content-4 .grid-item img {
+  display: block;
+  margin: 0 auto 15px;
+} */
+
+.content-4 .grid-item p {
+  font-size: 14px;
+  margin: 10px 0;
+  color: #333;
+  text-align: start;
+}
+
+.content-4 .grid-item a {
+  color: rgb(117, 176, 28);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content-4 .bottom {
+  text-decoration: none;
+  color: rgb(117, 176, 28);
+  display: block;
+  margin: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .content-4 .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .content-4 .grid-container {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .content-4 .grid-item {
+    padding: 15px;
+  }
+
+  .content-4 .grid-item p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-4 {
+    margin: 50px 0;
+  }
+
+  .content-4 .grid-container {
+    width: 100%;
+  }
+
+  .content-4 .grid-item {
+    padding: 10px;
+  }
+
+  .content-4 .grid-item p {
+    font-size: 12px;
+  }
+}
+.content-5 {
+  background-image: url("/images/content5-bgimg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  text-align: center;
+}
+
+.content-5 .top h1 {
+  /* font-size: 24px; */
+  /* color: white; */
+  margin-bottom: 40px;
+}
+
+.content-5 .center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin: 70px 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.content-5 .center .feature {
+  width: 30%;
+  margin: 20px;
+}
+
+.content-5 .center h2 {
+  font-size: 20px;
+  color: rgb(24, 23, 31);
+}
+
+.content-5 .center p {
+  color: rgb(59, 58, 58);
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.content-5 .bottom button {
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  background-color: rgb(117, 176, 28);
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .content-5 .center {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-5 .center .feature {
+    width: 80%;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-5 .top h1 {
+    font-size: 20px;
+  }
+
+  .content-5 .center .feature h2 {
+    font-size: 18px;
+  }
+
+  .content-5 .center p {
+    font-size: 14px;
+  }
+
+  .content-5 .bottom button {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-5 .top h1 {
+    font-size: 18px;
+  }
+
+  .content-5 .center .feature h2 {
+    font-size: 16px;
+  }
+
+  .content-5 .center p {
+    font-size: 13px;
+  }
+
+  .content-5 .bottom button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

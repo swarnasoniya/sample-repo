@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footprint Landing Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0%;
+      box-sizing: border-box;
+      overflow-x: hidden;
+
+    }
+
+    .btn-custom {
+      border-radius: 30px;
+      color: rgb(117, 176, 28);
+      border: none;
+      background-color: transparent;
+
+    }
+
+    .btn-custom-outline {
+      border-radius: 30px;
+      color: white;
+      background-color: rgb(117, 176, 28);
+      border: 2px solid rgb(117, 176, 28);
+    }
+
+    .btn-custom:hover,
+    .btn-custom-outline:hover {
+      color: #fff;
+    }
+
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+      position: fixed;
+      width: -webkit-fill-available;
+      z-index: 1;
+    }
+
+    header .container {
+      height: 80vh;
+      width: 100%;
+      background-image: url("/images/background1.jpeg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      text-align: start;
+    }
+
+    a.btn.btn-custom.mt-3 {
+      color: white;
+      background-color: rgb(117, 176, 28);
+      margin-right: 10px;
+    }
+
+    a.btn.btn-custom-outline.mt-3 {
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+      border-radius: 35px;
+    }
+
+    .container h1 {
+      max-width: 60%;
+    }
+
+    h2.text-center {
+      color: white;
+    }
+
+    p.text-center {
+      margin-bottom: 60px;
+      text-align: center !important;
+    }
+
+    .img-fluid {
+      max-width: 80%;
+      height: auto;
+    }
+
+    .content-5 {
+      background-image: url("/images/content5-bgimg.webp");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .content-5 .top h1 {
+      margin-bottom: 40px;
+    }
+
+    .content-5 .center {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      margin: 70px 0;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .content-5 .center .feature {
+      width: 30%;
+      margin: 20px;
+    }
+
+    .content-5 .center h2 {
+      font-size: 20px;
+      color: rgb(24, 23, 31);
+    }
+
+    .content-5 .center p {
+      color: rgb(59, 58, 58);
+      margin-top: 15px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .content-5 .bottom button {
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      background-color: rgb(117, 176, 28);
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1024px) {
+      .content-5 .center {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .content-5 .center .feature {
+        width: 80%;
+        text-align: center;
+        margin: 20px 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-5 .top h1 {
+        font-size: 20px;
+      }
+
+      .content-5 .center .feature h2 {
+        font-size: 18px;
+      }
+
+      .content-5 .center p {
+        font-size: 14px;
+      }
+
+      .content-5 .bottom button {
+        padding: 12px 25px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content-5 .top h1 {
+        font-size: 18px;
+      }
+
+      .content-5 .center .feature h2 {
+        font-size: 16px;
+      }
+
+      .content-5 .center p {
+        font-size: 13px;
+      }
+
+      .content-5 .bottom button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+
+    .content-4 .grid-item {
+      background-color: #a9a2a226;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 9px 15px rgba(0, 0, 0, 0.1);
+      text-align: start;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+
+    #blog h4 {
+      margin-top: 15px;
+    }
+
+    .btn-custom-outline {
+      padding: 8px 20px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    .btn-custom-outline:hover {
+      color: white;
+    }
+
+    footer {
+      background-color: rgb(208, 203, 203);
+      padding: 20px 0;
+    }
+
+    footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    footer .container a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      font-size: small;
+    }
+
+    footer .logo {
+      flex: 1 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    footer .footer-section {
+      flex: 1;
+      min-width: 150px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    footer .footer-section h5 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .footer-section a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      margin-bottom: 5px;
+      font-size: small;
+    }
+
+
+    @media (max-width: 1024px) {
+      footer .container {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+
+    @media (max-width: 768px) {
+      footer .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      footer .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      footer {
+        padding: 10px 0;
+      }
+
+      footer .footer-section h5 {
+        font-size: 14px;
+      }
+
+      footer .footer-section a {
+        font-size: 12px;
+      }
+    }
+
+
+    .container {
+      overflow: hidden;
+    }
+  </style>
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo" style="height: 40px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">Why Footprint</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact Sales</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blogs</a></li>
+        </ul>
+        <div class="right-nav ms-3">
+          <a class="btn btn-custom" href="#">Get Started</a>
+          <button class="btn btn-custom-outline ms-2">Login</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header class=" text-white text-center py-5">
+    <div class="container">
+      <h1>Transforming ESG Reporting with Blockchain Technology</h1>
+      <p>A game-changing tool that simplifies the management of your ESG disclosures, making it easier, faster, and more
+        affordable.</p>
+      <span>
+        <a href="#" class="btn btn-custom mt-3">Get Started</a>
+        <a href="#" class="btn btn-custom-outline mt-3">Schedule a Free Demo</a>
+      </span>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>About </h2>
+          <img src="images/logo.png" style="height: 90px; width: 180px;" alt="logo">
+          <p>Footprint revolutionizes ESG management, seamlessly blending Web2 and Web3 capabilities. Leveraging AI and
+            blockchain, it empowers organizations to securely monitor, measure, and amplify their environmental, social,
+            and economic impact.</p>
+          <a href="#" class="btn btn-custom">Learn More</a>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="images/content-2-img.png" class="img-fluid" alt="greenery image">
+          <p>Watch <a href="#"><b>Footprint by TRST01</b></a> - ESG reporting tool</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section with Accordion -->
+  <section id="how-it-works" class=" py-5" style="background-color: rgb(10, 40, 59);
+ ;">
+    <div class="container">
+
+      <h2 class="text-center">How It Works</h2>
+      <p class="text-center" style="color: white; text-align: center;">Key features of Footprint by TRST01</p>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="accordion" id="howItWorksAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingDefine" style="color: white;">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseDefine" aria-expanded="true" aria-controls="collapseDefine">
+                  Define
+                </button>
+              </h2>
+              <div id="collapseDefine" class="accordion-collapse collapse show" aria-labelledby="headingDefine"
+                data-bs-parent="#howItWorksAccordion">
+                <div class="accordion-body">
+                  Define your ESG goals and objectives to align with industry standards and company values.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingAssess">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseAssess" aria-expanded="false" aria-controls="collapseAssess">
+                  Assess
+                </button>
+              </h2>
+              <div id="collapseAssess" class="accordion-collapse collapse" aria-labelledby="headingAssess"
+                data-bs-parent="#howItWorksAccordion">
+                <div class="accordion-body">
+                  Assess current ESG data and gather necessary information to meet reporting requirements.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingValidate">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseValidate" aria-expanded="false" aria-controls="collapseValidate">
+                  Validate
+                </button>
+              </h2>
+              <div id="collapseValidate" class="accordion-collapse collapse" aria-labelledby="headingValidate"
+                data-bs-parent="#howItWorksAccordion">
+                <div class="accordion-body">
+                  Validate your data through blockchain technology for transparency and integrity.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingGenerate">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseGenerate" aria-expanded="false" aria-controls="collapseGenerate">
+                  Generate
+                </button>
+              </h2>
+              <div id="collapseGenerate" class="accordion-collapse collapse" aria-labelledby="headingGenerate"
+                data-bs-parent="#howItWorksAccordion">
+                <div class="accordion-body">
+                  Generate comprehensive reports in compliance with global ESG frameworks.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="images/content-3-img.png" class="img-fluid" alt="image of a graph">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reporting-frameworks" class="py-5">
+    <div class="container">
+      <h2 class="text-center" style="color: black;">Reporting Frameworks</h2>
+      <div class="content-4">
+        <div class="center">
+          <div class="grid-container">
+            <div class="grid-item text-center">
+              <img src="images/gri-logo.png" style="height: 50px; border-radius: 50%;" alt="GRI logo">
+              <p>The GRI Standards are regularly reviewed to ensure they reflect global best practices for
+                sustainability
+                reporting, helping organizations respond to emerging information demands.</p>
+              <a href="#">Visit GRI</a>
+            </div>
+            <div class="grid-item text-center">
+              <img src="images/sasb-logo.png" style="height: 50px; border-radius: 50%;" alt="SASB logo">
+              <p>SASB Standards enable businesses to manage and communicate financially-material sustainability topics
+                on
+                a company's financial condition or operating performance.</p>
+              <a href="#">Visit SASB</a>
+            </div>
+            <div class="grid-item text-center">
+              <img src="images/cdp-logo.jpeg" style="height: 40px; width: 70px;" alt="CDP logo">
+              <p>CDP is a global disclosure system that helps companies, cities, and regions manage environmental
+                impacts
+                by focusing on energy consumption and water data.</p>
+              <a href="#">Visit CDP</a>
+            </div>
+            <div class="grid-item text-center">
+              <img src="images/tcsd-logo.png" style="height: 30px; width: 100px;" alt="TCFD logo">
+              <p>The TCFD recommendations promote informed decisions through better reporting of climate-related risks
+                and
+                opportunities across governance, strategy, and risk management.</p>
+              <a href="#">Visit TCFD</a>
+            </div>
+            <div class="grid-item text-center">
+              <img src="images/sdg-logo.jpeg" style="height: 50px; width: 80px;" alt="SDG logo">
+              <p>SASB Standards enable businesses to manage and communicate financially-material sustainability topics
+                on
+                a company's financial condition or operating performance.</p>
+              <a href="#">Visit SASB</a>
+            </div>
+            <div class="grid-item text-center">
+              <img src="images/brsr-logo.jpeg" style="height: 50px; width: 70px;" alt="BRSR logo">
+              <p>BRSR emphasizes measurable metrics for improved comparability, requiring the top 1,000 listed companies
+                to submit Business Responsibility and Sustainability Reports.</p>
+              <a href="#">Visit BRSR</a>
+            </div>
+            <div class="grid-item text-center">
+              <img src="images/sgx-logo.png" style="height: 30px; width: 80px;" alt="SGX logo">
+              <p>The SGX ESG Framework promotes transparency and accountability, helping businesses navigate
+                sustainability
+                complexities with specific attention to the Singaporean market.</p>
+              <a href="#">Visit SGX</a>
+            </div>
+            <div class="grid-item text-center">
+              <img src="images/nasdaq-logo.png" style="height: 40px; width: 70px;" alt="Nasdaq logo">
+              <p>NASDAQ's ESG initiative steers companies towards socially responsible practices and promotes
+                sustainable,
+                ethical investing for a more resilient global economy.</p>
+              <a href="#">Visit Nasdaq ESG</a>
+            </div>
+          </div>
+        </div>
+        <a class="bottom" href="#">Learn how to customise your reporting ></a>
+      </div>
+    </div>
+  </section>
+  <!-- First Column -->
+  <section id="why" class="py-5">
+    <div class="container">
+      <div class="content-5">
+        <div class="top text-center mb-4">
+          <h1>Why choose <img src="/images/logo.png" alt="logo" class="img-fluid" style="height: 50px; width: 100px;">
+            for
+            your business</h1>
+        </div>
+        <div class="center row">
+          <!-- First Column -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <h2>Efficient, Transparent ESG Reporting</h2>
+            <p>Footprint simplifies ESG reporting, ensuring reliable data through blockchain technology. This boosts
+              transparency, enabling businesses to meet reporting standards like GRI, SASB, TCFD, and region-specific
+              frameworks.</p>
+          </div>
+          <!-- Second Column -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <h2>Comprehensive Supply Chain Sustainability Insights</h2>
+            <p>The tool offers supply chain management reporting, allowing companies to track and report on suppliers'
+              ESG
+              performance. This feature supports responsible sourcing and sustainable supply chain practices.</p>
+          </div>
+          <!-- Third Column -->
+          <div class="col-lg-4 col-md-12 col-12 mb-4">
+            <h2>Data Security and Compliance Assurance</h2>
+            <p>Footprint provides AI and blockchain-enabled security, safeguarding against breaches and fraud. It aligns
+              with reporting standards like BRSR, NASDAQ, and integrates seamlessly through API methods for streamlined
+              data transmission.</p>
+          </div>
+        </div>
+        <div class="bottom text-center mt-4">
+          <button class="btn btn-primary">Sign up now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Team Section -->
+  <section id="team" class="py-5">
+    <div class="container">
+      <h2 class="text-center" style="color: black;">Meet Our Team</h2>
+      <div class="row mt-4">
+        <div class="col-md-3 text-center" style="text-align: start;">
+          <img src="/images/img1.png" alt="Prabir Mishra">
+          <h5>Prabir Mishra</h5>
+          <p>CEO</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="/images/img2.png" alt="Syed Mubarak">
+          <h5>Syed Mubarak</h5>
+          <p>Advisor & SME</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="/images/img3.png" alt="Praveen V">
+          <h5>Praveen V</h5>
+          <p>CTO</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="images/img4.png" alt="Shiv Shankar">
+          <h5>Shiv Shankar</h5>
+          <p>Sr Manager, Sustainability</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="images/img5.png" alt="Shiv Shankar">
+          <h5>Shiv Shankar</h5>
+          <p>Sr Manager, Sustainability</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="images/img6.png" alt="Shiv Shankar">
+          <h5>Shiv Shankar</h5>
+          <p>Sr Manager, Sustainability</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="images/img7.png" alt="Shiv Shankar">
+          <h5>Shiv Shankar</h5>
+          <p>Sr Manager, Sustainability</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center" style="color: black;">Our Blogs</h2>
+
+      <div id="blogCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+          <!-- Blog Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="images/Screenshot 2024-10-09 194008.png" alt="">
+                <h4>Embracing Enterprise Sustainability in the Digital Age</h4>
+                <p>Learn how Footprint ESG Reporting Tool is helping businesses embrace sustainability in a
+                  digital-first
+                  world.</p>
+                <a href="#" class="btn btn-custom-outline">Read More</a>
+              </div>
+              <div class="col-md-4">
+                <img src="images/Screenshot 2024-10-09 193947.png" alt="">
+                <h4>Benefits of Footprint</h4>
+                <p>Discover the benefits of using Footprint for your ESG reporting and how it can help your business
+                  stay
+                  ahead.</p>
+                <a href="#" class="btn btn-custom-outline">Read More</a>
+              </div>
+              <div class="col-md-4">
+                <img src="images/Screenshot 2024-10-09 194008.png" alt="">
+                <h4>Footprint Bharat</h4>
+                <p>Explore how Footprint is making a difference in India with the Footprint Bharat initiative.</p>
+                <a href="#" class="btn btn-custom-outline">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="images/Screenshot 2024-10-09 194008.png" alt="">
+                <h4>Blog Title Example</h4>
+                <p>Short description of another blog post.</p>
+                <a href="#" class="btn btn-custom-outline">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  -->
+  <!-- Footer Section -->
+  <footer class=" text-black text-center py-4">
+    <div class="container">
+      <div><img src="/images/logo.png" style="height: 90px; width: 180px;" alt="logo"></div>
+      <div>
+        <h5>Footprint</h5>
+        <a href="#">Frameworks</a>
+        <a href="#">Benefits of Footprint</a>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <a href="#">ESG reporting</a>
+        <a href="#">Footprint Bharat</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#">About</a>
+        <a href="#">Out Team</a>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <a href="#">Blogs</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="#">+91-1234567890</a>
+        <a href="#">Em:journey@trsto1 </a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
